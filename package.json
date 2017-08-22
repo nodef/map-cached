@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/wolfram77/node-mapcached/issues"
   },
-  "homepage": "https://github.com/wolfram77/node-mapcached#readme"
+  "homepage": "https://github.com/wolfram77/node-mapcached#readme",
+  "devDependencies": {
+    "map-promised": "0.0.5"
+  }
 }
