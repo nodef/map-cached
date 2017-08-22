@@ -11,17 +11,18 @@ var MapCached = require('map-cached');
 
 var mapp = new MapPromised(new Map());
 mapp.set('a', 1);
-var mapc = new MapCached(mapp);
-mapc.set('b', 2);
-mapc.size                     // 2
-mapc.get('b')                 // 2
-mapc.get('a')                 // 1
-mapc.delete('b');
-mapc.size                     // 1
-mapc.set('c', 3);
-mapc.set('d', 4);
-mapc.size                     // 3
-mapc.flush();
-mapp.size.then((ans) => ans); // 3
-// ...
+new MapCached(mapp).then((mapc) => {
+  mapc.set('b', 2);
+  mapc.size                     // 2
+  mapc.get('b')                 // 2
+  mapc.get('a')                 // 1
+  mapc.delete('b');
+  mapc.size                     // 1
+  mapc.set('c', 3);
+  mapc.set('d', 4);
+  mapc.size                     // 3
+  mapc.flush();
+  mapp.size.then((ans) => ans); // 3
+  // ...
+});
 ```

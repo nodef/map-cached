@@ -1,6 +1,6 @@
 {
   "name": "map-cached",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Fully Cached interface for a Promised Map.",
   "main": "index.js",
   "scripts": {
