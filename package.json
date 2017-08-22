@@ -1,0 +1,23 @@
+{
+  "name": "map-cached",
+  "version": "0.0.0",
+  "description": "Fully Cached interface for a Promised Map.",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wolfram77/node-mapcached.git"
+  },
+  "keywords": [
+    "map",
+    "cached"
+  ],
+  "author": "wolfram77@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wolfram77/node-mapcached/issues"
+  },
+  "homepage": "https://github.com/wolfram77/node-mapcached#readme"
+}
