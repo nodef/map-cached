@@ -21,8 +21,9 @@ new MapCached(mapp).then((mapc) => {
   mapc.set('c', 3);
   mapc.set('d', 4);
   mapc.size                     // 3
-  mapc.flush();
-  mapp.size.then((ans) => ans); // 3
+  mapc.flush().then(() => {
+    return mapp.size;
+  }).then((ans) => ans);        // 3
   // ...
 });
 ```
