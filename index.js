@@ -8,6 +8,7 @@ var $ = function MapCached(src, cap) {
     return this;
   });
 };
+module.exports = $;
 
 var _ = $.prototype;
 
@@ -18,7 +19,7 @@ Object.defineProperty(_, 'size', {'get': function() {
 _.flush = function() {
   var a = [];
   for(var [k, v] of this._set)
-    a.push(this._src.set(k, v));
+    a.push(v===undefined? this._src.delete(k) : this._src.set(k, v));
   this._set.clear();
   return Promise.all(a);
 };
