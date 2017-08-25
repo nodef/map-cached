@@ -1,6 +1,6 @@
 {
   "name": "map-cached",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Fully Cached interface for a Promised Map.",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/wolfram77/node-mapcached#readme",
   "devDependencies": {
-    "map-promised": "0.0.5"
+    "map-promised": "0.0"
   }
 }
