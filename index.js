@@ -1,4 +1,5 @@
-var $ = function MapCached(src, cap) {
+'use strict';
+const $ = function MapCached(src, cap) {
   this._src = src;
   this._cap = cap||1024;
   this._map = new Map();
@@ -6,7 +7,7 @@ var $ = function MapCached(src, cap) {
 };
 module.exports = $;
 
-var _ = $.prototype;
+const _ = $.prototype;
 
 _.setup = function() {
   return this._src.valueOf().then((ans) => this._map = ans);
@@ -17,7 +18,7 @@ Object.defineProperty(_, 'size', {'get': function() {
 }});
 
 _.flush = function() {
-  var a = [];
+  const a = [];
   for(var [k, v] of this._set)
     a.push(v===undefined? this._src.delete(k) : this._src.set(k, v));
   this._set.clear();
