@@ -5,13 +5,22 @@
 Fully Cached interface for a Promised Map.
 
 ```javascript
+var MapCached = require('map-cached');
+// MapCached(<source>, <set-cache>);
+// source:    a promised map, like MapPg (map-pg)
+// set-cache: size of set cache, flushed when full or manually
+```
+```javascript
 var MapPromised = require('map-promised');
 var MapCached = require('map-cached');
-// MapCached(<source>, <set cache capacity>)
 
 var mapp = new MapPromised(new Map());
-mapp.set('a', 1);
-new MapCached(mapp).then((mapc) => {
+var mapc = new MapCached(mapp);
+mapp.setup().then(() => {
+  mapp.set('a', 1);
+}).then(() => {
+  return mapc.setup();
+}).then(() => {
   mapc.set('b', 2);
   mapc.size;             // 2
   mapc.get('b');         // 2
@@ -26,4 +35,3 @@ new MapCached(mapp).then((mapc) => {
   }).then((ans) => ans); // 3
   // ...
 });
-```
