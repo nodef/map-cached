@@ -3,8 +3,12 @@ var MapPromised = require('map-promised');
 var MapCached = require('./');
 
 var mapp = new MapPromised(new Map());
-mapp.set('a', 1);
-new MapCached(mapp).then((mapc) => {
+var mapc = new MapCached(mapp);
+mapp.setup().then(() => {
+  mapp.set('a', 1);
+}).then(() => {
+  return mapc.setup();
+}).then(() => {
   mapc.set('b', 2);
   assert.equal(mapc.size, 2);
   assert.equal(mapc.get('b'), 2);
