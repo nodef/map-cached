@@ -3,14 +3,14 @@ var $ = function MapCached(src, cap) {
   this._cap = cap||1024;
   this._map = new Map();
   this._set = new Map();
-  return this._src.valueOf().then((ans) => {
-    this._map = ans;
-    return this;
-  });
 };
 module.exports = $;
 
 var _ = $.prototype;
+
+_.setup = function() {
+  return this._src.valueOf().then((ans) => this._map = ans);
+};
 
 Object.defineProperty(_, 'size', {'get': function() {
   return this._map.size;
