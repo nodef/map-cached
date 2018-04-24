@@ -1,5 +1,7 @@
 # map-cached
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/nodef/map-cached.svg)](https://greenkeeper.io/)
+
 [![NPM](https://nodei.co/npm/map-cached.png)](https://nodei.co/npm/map-cached/)
 
 Fully Cached interface for a Promised Map.
